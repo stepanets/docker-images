@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+        ansible:
+                build: ansible
+                volumes:
+                        - ./ansible/hosts:/etc/ansible/hosts
+        host1:
+                build: host
+
