@@ -9,4 +9,4 @@ COPY ssh /root/.ssh
 
 EXPOSE 22
 
-CMD "tail -f /dev/null"
+CMD tail -f /dev/null
