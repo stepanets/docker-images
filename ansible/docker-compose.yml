@@ -1,10 +1,16 @@
-version: '3.7'
+---
+version: '3'
 
 services:
-        ansible:
-                build: ansible
-                volumes:
-                        - ./ansible/hosts:/etc/ansible/hosts
-        host1:
-                build: host
-
+  master:
+    build:
+      dockerfile: master.Dockerfile
+      context: .
+    depends_on:
+      - host
+    volumes:
+      - ./ansible:/ansible
+  host:
+    build:
+      dockerfile: host.Dockerfile
+      context: .
