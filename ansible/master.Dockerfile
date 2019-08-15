@@ -13,4 +13,6 @@ RUN apt update -y && apt install -y openssh-client python software-properties-co
 COPY id_rsa.pub /root/.ssh/id_rsa.pub
 COPY id_rsa /root/.ssh/id_rsa
 
+RUN chmod 600 /root/.ssh/*
+
 WORKDIR /ansible
